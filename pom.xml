@@ -32,12 +32,19 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
+            <version>4.11.0</version>
         </dependency>
+
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.1.0</version>
+            <version>5.3.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>me.jvt.cucumber</groupId>
+            <artifactId>reporting-plugin</artifactId>
+            <version>7.3.0</version>
         </dependency>
 
     </dependencies>
@@ -49,11 +56,13 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
                 <configuration>
-                  <!--  <parallel>methods</parallel>
-                    <threadCount>4</threadCount>-->
+                    <parallel>methods</parallel>
+                    <useUnlimitedThreads>false</useUnlimitedThreads>
+                    <threadCount>4</threadCount>
+                    <perCoreThreadCount>false</perCoreThreadCount>
                     <testFailureIgnore>true</testFailureIgnore>
                     <includes>
-                        <include>**/*Runner.java</include>
+                        <include>**/CukesRunner*.java</include>
                     </includes>
                 </configuration>
             </plugin>

@@ -1,4 +1,4 @@
-package cydeo;
+package cydeo.utilities;
 
 import java.io.FileInputStream;
 import java.util.Properties;
