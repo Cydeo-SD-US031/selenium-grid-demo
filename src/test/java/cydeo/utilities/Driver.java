@@ -35,8 +35,13 @@ public class Driver {
             We will read our browserType from configuration.properties file.
             This way, we can control which browser is opened from outside our code.
              */
-            String browserType = ConfigurationReader.getProperty("browser");
-
+            String browserType="";
+            if (System.getProperty("BROWSER") == null) {
+                browserType = ConfigurationReader.getProperty("browser");
+            } else {
+                browserType = System.getProperty("BROWSER");
+            }
+            System.out.println("Browser: " + browserType);
             /*
             Depending on the browserType returned from the configuration.properties
             switch statement will determine the "case", and open the matching browser.
@@ -45,7 +50,7 @@ public class Driver {
                 case "remote-chrome":
                     try {
                         // assign your grid server address
-                        String gridAddress = "44.211.239.74";
+                        String gridAddress = "54.237.209.202";
                         URL url = new URL("http://"+ gridAddress + ":4444/wd/hub");
                         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
                         desiredCapabilities.setBrowserName("chrome");
