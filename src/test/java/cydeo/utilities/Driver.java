@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxDriverLogLevel;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -52,9 +54,9 @@ public class Driver {
                         // assign your grid server address
                         String gridAddress = "54.237.209.202";
                         URL url = new URL("http://"+ gridAddress + ":4444/wd/hub");
-                        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-                        desiredCapabilities.setBrowserName("chrome");
-                        driverPool.set(new RemoteWebDriver(url, desiredCapabilities));
+                        ChromeOptions chromeOptions = new ChromeOptions();
+                        chromeOptions.addArguments("--start-maximized");
+                        driverPool.set(new RemoteWebDriver(url, chromeOptions));
                         //driverPool.set(new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"),desiredCapabilities));
 
                     } catch (Exception e) {
@@ -66,9 +68,9 @@ public class Driver {
                         // assign your grid server address
                         String gridAddress = "44.211.239.74";
                         URL url = new URL("http://"+ gridAddress + ":4444/wd/hub");
-                        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-                        desiredCapabilities.setBrowserName("firefox");
-                        driverPool.set(new RemoteWebDriver(url, desiredCapabilities));
+                        FirefoxOptions firefoxOptions=new FirefoxOptions();
+                        firefoxOptions.addArguments("--start-maximized");
+                        driverPool.set(new RemoteWebDriver(url, firefoxOptions));
                         //driverPool.set(new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"),desiredCapabilities));
 
                     } catch (Exception e) {
