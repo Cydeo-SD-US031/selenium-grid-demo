@@ -44,6 +44,7 @@ public class Driver {
                 browserType = System.getProperty("BROWSER");
             }
             System.out.println("Browser: " + browserType);
+
             /*
             Depending on the browserType returned from the configuration.properties
             switch statement will determine the "case", and open the matching browser.
@@ -52,7 +53,7 @@ public class Driver {
                 case "remote-chrome":
                     try {
                         // assign your grid server address
-                        String gridAddress = "34.239.154.115";
+                        String gridAddress = "54.234.152.90";
                         URL url = new URL("http://"+ gridAddress + ":4444/wd/hub");
                         ChromeOptions chromeOptions = new ChromeOptions();
                         chromeOptions.addArguments("--start-maximized");
