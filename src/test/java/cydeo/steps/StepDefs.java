@@ -31,7 +31,7 @@ public class StepDefs {
         System.out.println("*** URL is OPENED THROUGH THE HOOK CLASS******");
         System.out.println("**********************************************");
         BrowserUtils.waitFor(2);
-        // Driver.getDriver().navigate().refresh(); // US Student -->
+         Driver.getDriver().navigate().refresh(); // US Student -->
         // etsy.accept.click(); //  EU Student
         BrowserUtils.waitFor(2);
 
