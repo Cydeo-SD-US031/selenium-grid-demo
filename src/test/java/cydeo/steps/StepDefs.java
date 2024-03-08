@@ -32,6 +32,7 @@ public class StepDefs {
         System.out.println("**********************************************");
         BrowserUtils.waitFor(2);
         // Driver.getDriver().navigate().refresh(); // US Student -->
+        BrowserUtils.waitFor(2);
         // etsy.accept.click(); //  EU Student
         BrowserUtils.waitFor(2);
 
